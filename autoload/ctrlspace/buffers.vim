@@ -440,7 +440,7 @@ function! s:keepBuffersForKeys(dict)
 
 	for b in range(1, bufnr("$"))
 		if buflisted(b) && !has_key(a:dict, b) && !getbufvar(b, "&modified")
-			exe "bwipeout" b
+			exe "bwipeout!" b
 			call add(removed, b)
 		endif
 	endfor
